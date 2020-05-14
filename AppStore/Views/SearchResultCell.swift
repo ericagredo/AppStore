@@ -21,21 +21,18 @@ class SearchResultCell: UICollectionViewCell {
     
     let appNameLabel: UILabel = {
         let label = UILabel()
-        label.text = "App Name"
-        
+
         return label
     }()
     
     let categoryLabel: UILabel = {
         let label = UILabel()
-        label.text = "Photo and Video"
         
         return label
     }()
     
     let downloadLabel: UILabel = {
         let label = UILabel()
-        label.text = "9.26M"
         
         return label
     }()

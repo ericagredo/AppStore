@@ -10,7 +10,12 @@ import Foundation
 
 struct Network
 {
-    static func fetchItunesApps()
+    static let shared = Network()
+    private init()
+    {
+        
+    }
+    func fetchItunesApps(completion: @escaping ([Result], Error?) -> Void)
     {
         let urlString = "https://itunes.apple.com/search?term=instagram&entity=software"
         guard let url = URL(string: urlString) else { return }
@@ -19,6 +24,7 @@ struct Network
             if let err = err
             {
                 print("Failed to fecth apps:", err)
+                completion([],err)
                 return
             }
             guard let data = data else { return }
@@ -26,10 +32,12 @@ struct Network
             do
             {
                 let responses = try JSONDecoder().decode(SearchResult.self, from: data).results
+                completion(responses,nil)
                 responses.forEach{print($0.trackName, $0.primaryGenreName)}
             }
             catch let errResponse
             {
+                completion([],err)
                 print("There was an error decoding", errResponse)
             }
             

@@ -12,17 +12,29 @@ class AppSearchController: UICollectionViewController, UICollectionViewDelegateF
 {
     
     private let cellID = "cellID"
+    private var appResultArr = [Result]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.backgroundColor = .white
         collectionView.register(SearchResultCell.self, forCellWithReuseIdentifier: cellID)
-        Network.fetchItunesApps()
+        self.retriveApps()
+    
     }
     
     init()
     {
         super.init(collectionViewLayout: UICollectionViewFlowLayout())
+    }
+    
+    private func retriveApps()
+    {
+        Network.shared.fetchItunesApps { (result, err) in
+            self.appResultArr = result
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        }
     }
     
     required init?(coder: NSCoder) {
@@ -34,11 +46,21 @@ class AppSearchController: UICollectionViewController, UICollectionViewDelegateF
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        
+        return self.appResultArr.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! SearchResultCell
+        
+        
+        let appResult = self.appResultArr[indexPath.item]
+        var avgRating = appResult.averageUserRating ?? 0
+        avgRating = (avgRating * 100).rounded() / 100
+        cell.appNameLabel.text = appResult.trackName
+        cell.categoryLabel.text = appResult.primaryGenreName
+        cell.downloadLabel.text = "Rating: \(avgRating)"
+        
       
         return cell
     }
