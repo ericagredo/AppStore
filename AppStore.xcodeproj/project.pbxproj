@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -24,6 +24,10 @@
 		AD771F11246C25EE00AAC41E /* AppStoreUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD771F10246C25EE00AAC41E /* AppStoreUITests.swift */; };
 		AD911F13246DA67500D9EB35 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD911F12246DA67500D9EB35 /* SearchResult.swift */; };
 		AD911F16246DA74700D9EB35 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD911F15246DA74700D9EB35 /* Networking.swift */; };
+		AD911F1A246EE65800D9EB35 /* AppsBaseCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD911F19246EE65800D9EB35 /* AppsBaseCollectionViewController.swift */; };
+		AD911F1C246EE66E00D9EB35 /* AppsHorizontalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD911F1B246EE66E00D9EB35 /* AppsHorizontalController.swift */; };
+		AD911F1E246EE6A100D9EB35 /* BaseCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD911F1D246EE6A100D9EB35 /* BaseCollectionViewController.swift */; };
+		AD911F20246EE89800D9EB35 /* AppsGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD911F1F246EE89800D9EB35 /* AppsGroupCell.swift */; };
 		C199F3CBEE5AAA2040F40BC4 /* Pods_AppStoreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E1FBDEC362CE096F8398C15 /* Pods_AppStoreTests.framework */; };
 		E6FCF72CC126685D8A810B8A /* Pods_AppStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F5A112B1E1D99F86571D6E8 /* Pods_AppStore.framework */; };
 /* End PBXBuildFile section */
@@ -75,6 +79,10 @@
 		AD771F12246C25EE00AAC41E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD911F12246DA67500D9EB35 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		AD911F15246DA74700D9EB35 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		AD911F19246EE65800D9EB35 /* AppsBaseCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsBaseCollectionViewController.swift; sourceTree = "<group>"; };
+		AD911F1B246EE66E00D9EB35 /* AppsHorizontalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHorizontalController.swift; sourceTree = "<group>"; };
+		AD911F1D246EE6A100D9EB35 /* BaseCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewController.swift; sourceTree = "<group>"; };
+		AD911F1F246EE89800D9EB35 /* AppsGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsGroupCell.swift; sourceTree = "<group>"; };
 		BD3CE835CF0A59318A78BFDF /* Pods-AppStoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStoreTests.debug.xcconfig"; path = "Target Support Files/Pods-AppStoreTests/Pods-AppStoreTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FA1E99A1A2FBB3634358AF03 /* Pods_AppStore_AppStoreUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppStore_AppStoreUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -111,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				AD5F2DFC246C7D2D00CB026F /* SearchResultCell.swift */,
+				AD911F1F246EE89800D9EB35 /* AppsGroupCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -118,8 +127,10 @@
 		AD75AB7D246C4CF100407638 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				AD911F18246EE60A00D9EB35 /* Search */,
+				AD911F17246EE5FF00D9EB35 /* Apps */,
 				AD771EEF246C25ED00AAC41E /* BaseViewController.swift */,
-				AD75AB7F246C4D1900407638 /* AppSearchController.swift */,
+				AD911F1D246EE6A100D9EB35 /* BaseCollectionViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -209,6 +220,23 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		AD911F17246EE5FF00D9EB35 /* Apps */ = {
+			isa = PBXGroup;
+			children = (
+				AD911F19246EE65800D9EB35 /* AppsBaseCollectionViewController.swift */,
+				AD911F1B246EE66E00D9EB35 /* AppsHorizontalController.swift */,
+			);
+			path = Apps;
+			sourceTree = "<group>";
+		};
+		AD911F18246EE60A00D9EB35 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				AD75AB7F246C4D1900407638 /* AppSearchController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 		AF4AAE378D679DDBB73C13ED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -229,7 +257,6 @@
 				BD3CE835CF0A59318A78BFDF /* Pods-AppStoreTests.debug.xcconfig */,
 				94124C5824D26E936F783DFD /* Pods-AppStoreTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -476,12 +503,16 @@
 				AD911F16246DA74700D9EB35 /* Networking.swift in Sources */,
 				AD5F2E01246CD7AC00CB026F /* VerticalStackView.swift in Sources */,
 				AD911F13246DA67500D9EB35 /* SearchResult.swift in Sources */,
+				AD911F20246EE89800D9EB35 /* AppsGroupCell.swift in Sources */,
 				AD5F2DFD246C7D2D00CB026F /* SearchResultCell.swift in Sources */,
 				AD75AB7C246C480900407638 /* Constants.swift in Sources */,
+				AD911F1A246EE65800D9EB35 /* AppsBaseCollectionViewController.swift in Sources */,
 				AD75AB80246C4D1900407638 /* AppSearchController.swift in Sources */,
 				AD771EF0246C25ED00AAC41E /* BaseViewController.swift in Sources */,
 				AD771EEC246C25ED00AAC41E /* AppDelegate.swift in Sources */,
 				AD771EEE246C25ED00AAC41E /* SceneDelegate.swift in Sources */,
+				AD911F1E246EE6A100D9EB35 /* BaseCollectionViewController.swift in Sources */,
+				AD911F1C246EE66E00D9EB35 /* AppsHorizontalController.swift in Sources */,
 				AD771EF6246C25ED00AAC41E /* AppStore.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

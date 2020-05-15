@@ -15,9 +15,10 @@ struct Network
     {
         
     }
-    func fetchItunesApps(completion: @escaping ([Result], Error?) -> Void)
+    func fetchItunesApps(searchText: String, completion: @escaping ([Result], Error?) -> Void)
     {
-        let urlString = "https://itunes.apple.com/search?term=instagram&entity=software"
+        let searchText = searchText
+        let urlString = "https://itunes.apple.com/search?term=\(searchText)&entity=software"
         guard let url = URL(string: urlString) else { return }
         
         URLSession.shared.dataTask(with: url) { (data, response, err) in

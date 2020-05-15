@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class SearchResultCell: UICollectionViewCell {
     
@@ -112,6 +113,8 @@ class SearchResultCell: UICollectionViewCell {
         
         addSubview(overAllStack)
         overAllStack.fillSuperview(padding: .init(top: 16, left: 16, bottom: 16, right: 16))
+        
+      
         
        
         
