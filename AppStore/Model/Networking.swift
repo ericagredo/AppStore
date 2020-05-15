@@ -33,7 +33,7 @@ struct Network
             {
                 let responses = try JSONDecoder().decode(SearchResult.self, from: data).results
                 completion(responses,nil)
-                responses.forEach{print($0.trackName, $0.primaryGenreName)}
+                
             }
             catch let errResponse
             {
