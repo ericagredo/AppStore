@@ -16,7 +16,7 @@ class AppsHorizontalController: BaseCollectionViewController, UICollectionViewDe
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView.register(AppCellForGroups.self, forCellWithReuseIdentifier: cellId)
         collectionView.backgroundColor = .blue
         
         if let layout = collectionViewLayout as? UICollectionViewFlowLayout
@@ -31,7 +31,7 @@ class AppsHorizontalController: BaseCollectionViewController, UICollectionViewDe
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
-        cell.backgroundColor = .red
+
         return cell
     }
     

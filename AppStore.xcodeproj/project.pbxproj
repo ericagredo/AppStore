@@ -22,6 +22,7 @@
 		AD771EFB246C25EE00AAC41E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD771EF9246C25EE00AAC41E /* LaunchScreen.storyboard */; };
 		AD771F06246C25EE00AAC41E /* AppStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD771F05246C25EE00AAC41E /* AppStoreTests.swift */; };
 		AD771F11246C25EE00AAC41E /* AppStoreUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD771F10246C25EE00AAC41E /* AppStoreUITests.swift */; };
+		AD7AAF6C246F25EE00578846 /* AppCellForGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7AAF6B246F25EE00578846 /* AppCellForGroups.swift */; };
 		AD911F13246DA67500D9EB35 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD911F12246DA67500D9EB35 /* SearchResult.swift */; };
 		AD911F16246DA74700D9EB35 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD911F15246DA74700D9EB35 /* Networking.swift */; };
 		AD911F1A246EE65800D9EB35 /* AppsBaseCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD911F19246EE65800D9EB35 /* AppsBaseCollectionViewController.swift */; };
@@ -77,6 +78,7 @@
 		AD771F0C246C25EE00AAC41E /* AppStoreUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppStoreUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD771F10246C25EE00AAC41E /* AppStoreUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreUITests.swift; sourceTree = "<group>"; };
 		AD771F12246C25EE00AAC41E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD7AAF6B246F25EE00578846 /* AppCellForGroups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCellForGroups.swift; sourceTree = "<group>"; };
 		AD911F12246DA67500D9EB35 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		AD911F15246DA74700D9EB35 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		AD911F19246EE65800D9EB35 /* AppsBaseCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsBaseCollectionViewController.swift; sourceTree = "<group>"; };
@@ -118,8 +120,8 @@
 		AD5F2DFB246C7D0600CB026F /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				AD5F2DFC246C7D2D00CB026F /* SearchResultCell.swift */,
-				AD911F1F246EE89800D9EB35 /* AppsGroupCell.swift */,
+				AD7AAF6A246F25C000578846 /* Apps */,
+				AD7AAF69246F25AB00578846 /* Search */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -202,6 +204,23 @@
 				AD771F12246C25EE00AAC41E /* Info.plist */,
 			);
 			path = AppStoreUITests;
+			sourceTree = "<group>";
+		};
+		AD7AAF69246F25AB00578846 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				AD5F2DFC246C7D2D00CB026F /* SearchResultCell.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		AD7AAF6A246F25C000578846 /* Apps */ = {
+			isa = PBXGroup;
+			children = (
+				AD911F1F246EE89800D9EB35 /* AppsGroupCell.swift */,
+				AD7AAF6B246F25EE00578846 /* AppCellForGroups.swift */,
+			);
+			path = Apps;
 			sourceTree = "<group>";
 		};
 		AD911F11246DA66400D9EB35 /* Model */ = {
@@ -508,6 +527,7 @@
 				AD75AB7C246C480900407638 /* Constants.swift in Sources */,
 				AD911F1A246EE65800D9EB35 /* AppsBaseCollectionViewController.swift in Sources */,
 				AD75AB80246C4D1900407638 /* AppSearchController.swift in Sources */,
+				AD7AAF6C246F25EE00578846 /* AppCellForGroups.swift in Sources */,
 				AD771EF0246C25ED00AAC41E /* BaseViewController.swift in Sources */,
 				AD771EEC246C25ED00AAC41E /* AppDelegate.swift in Sources */,
 				AD771EEE246C25ED00AAC41E /* SceneDelegate.swift in Sources */,
