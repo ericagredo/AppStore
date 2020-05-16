@@ -14,7 +14,8 @@ class AppsBaseCollectionViewController: BaseCollectionViewController, UICollecti
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.backgroundColor = .yellow
+        collectionView.backgroundColor = .white
+      
         collectionView.register(AppsGroupCell.self, forCellWithReuseIdentifier: cellId)
     }
     

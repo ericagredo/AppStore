@@ -10,31 +10,27 @@ import UIKit
 
 class AppCellForGroups: UICollectionViewCell
 {
-    let imgView : UIImageView =
-    {
-        let imgView = UIImageView()
-        imgView.backgroundColor = .purple
-        return imgView
-    }()
-    
-    let appLabel: UILabel = {
-        let label = UILabel()
-        label.text = "App Name"
-        return label
-    }()
-    
-    let getButton : UIButton = {
-        let button = UIButton(type: .system)
-        button.backgroundColor = .gray
-        button.setTitle("GET", for: .normal)
-        return button
-    }()
+    let imgView = UIImageView(cornerRadius: 8)
+    let appLabel = UILabel(text: "App Name", font: .systemFont(ofSize: 20))
+    let companyLabel = UILabel(text: "Company Name", font: .systemFont(ofSize: 13))
+    let getButton = UIButton(title: "GET")
     
     override init(frame: CGRect)
     {
         super.init(frame: frame)
-        let stackView = UIStackView(arrangedSubviews: [imgView,appLabel,getButton])
-        self.backgroundColor = .brown
+        imgView.backgroundColor = .purple
+        imgView.constrainWidth(constant: 64)
+        imgView.constrainHeight(constant: 64)
+        
+        getButton.backgroundColor = UIColor(white: 0.95, alpha: 1)
+        getButton.constrainWidth(constant: 80)
+        getButton.constrainHeight(constant: 32)
+        getButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        getButton.layer.cornerRadius = 16
+       
+        let stackView = UIStackView(arrangedSubviews: [imgView,VerticalStackView(arrangedSubviews: [appLabel,companyLabel], spacing: 4),getButton])
+        stackView.spacing = 16
+        stackView.alignment = .center
         addSubview(stackView)
         stackView.fillSuperview()
     }
