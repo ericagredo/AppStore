@@ -10,12 +10,8 @@ import UIKit
 
 class AppsGroupCell: UICollectionViewCell
 {
-    let appSectionLabel : UILabel = {
-        let label = UILabel()
-        label.text = "App Section"
-        label.font = UIFont.boldSystemFont(ofSize: 25.0)
-        return label
-    }()
+    
+    let appSectionLabel = UILabel(text: "App Section", font: .boldSystemFont(ofSize: 30))
     
     let horzController = AppsHorizontalController()
     
@@ -23,7 +19,7 @@ class AppsGroupCell: UICollectionViewCell
         super.init(frame: frame)
         
         addSubview(appSectionLabel)
-        appSectionLabel.anchor(top: topAnchor, leading: leadingAnchor, bottom: nil, trailing: trailingAnchor)
+        appSectionLabel.anchor(top: topAnchor, leading: leadingAnchor, bottom: nil, trailing: trailingAnchor, padding: .init(top: 0, left: 16, bottom: 0, right: 0))
         
         addSubview(horzController.view)
         horzController.view.anchor(top: appSectionLabel.bottomAnchor, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor)
