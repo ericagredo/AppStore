@@ -9,21 +9,25 @@
 import UIKit
 import SDWebImage
 
-class AppsHorizontalController: BaseCollectionViewController, UICollectionViewDelegateFlowLayout
+class AppsHorizontalController: HorizontalSnappingViewController, UICollectionViewDelegateFlowLayout
 {
     let cellId = "horzCell"
     let topBottom : CGFloat = 12
     let lineSpacing: CGFloat = 10
     var appGroup: AppGroup?
+    var didSelectHandler: ((FeedResult) -> ())?
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
         collectionView.register(AppCellForGroups.self, forCellWithReuseIdentifier: cellId)
         collectionView.backgroundColor = .white
-        
-        if let layout = collectionViewLayout as? UICollectionViewFlowLayout
-        {
-            layout.scrollDirection = .horizontal
+        collectionView.contentInset = .init(top: 0, left: 16, bottom: 0, right: 16)
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let app = appGroup?.feed.results[indexPath.item] {
+            didSelectHandler?(app)
         }
     }
     
@@ -51,8 +55,5 @@ class AppsHorizontalController: BaseCollectionViewController, UICollectionViewDe
         return lineSpacing
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return .init(top: topBottom, left: 16, bottom: topBottom, right: 16)
-    }
     
 }

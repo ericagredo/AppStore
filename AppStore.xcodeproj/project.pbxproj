@@ -10,6 +10,10 @@
 		7FB42D3A2BE8084488C24F32 /* Pods_AppStore_AppStoreUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1E99A1A2FBB3634358AF03 /* Pods_AppStore_AppStoreUITests.framework */; };
 		AD2786DF2471DDE800A35D46 /* AppsHeaderHorizontalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2786DE2471DDE800A35D46 /* AppsHeaderHorizontalController.swift */; };
 		AD2786E12471E03A00A35D46 /* AppsHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2786E02471E03A00A35D46 /* AppsHeaderCell.swift */; };
+		AD3514C32472D67800447F6A /* SocialHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3514C22472D67800447F6A /* SocialHeader.swift */; };
+		AD3514C5247310B000447F6A /* BetterSnappingLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3514C4247310B000447F6A /* BetterSnappingLayout.swift */; };
+		AD3514C7247311AC00447F6A /* HorizontalSnappingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3514C6247311AC00447F6A /* HorizontalSnappingViewController.swift */; };
+		AD3514CA24731F9E00447F6A /* AppDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3514C924731F9E00447F6A /* AppDetailController.swift */; };
 		AD5F2DFD246C7D2D00CB026F /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5F2DFC246C7D2D00CB026F /* SearchResultCell.swift */; };
 		AD5F2E00246CD7AC00CB026F /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5F2DFE246CD7AC00CB026F /* UIView+Layout.swift */; };
 		AD5F2E01246CD7AC00CB026F /* VerticalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5F2DFF246CD7AC00CB026F /* VerticalStackView.swift */; };
@@ -65,6 +69,10 @@
 		96FA017C243068BF9F206757 /* Pods-AppStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStore.debug.xcconfig"; path = "Target Support Files/Pods-AppStore/Pods-AppStore.debug.xcconfig"; sourceTree = "<group>"; };
 		AD2786DE2471DDE800A35D46 /* AppsHeaderHorizontalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHeaderHorizontalController.swift; sourceTree = "<group>"; };
 		AD2786E02471E03A00A35D46 /* AppsHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHeaderCell.swift; sourceTree = "<group>"; };
+		AD3514C22472D67800447F6A /* SocialHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialHeader.swift; sourceTree = "<group>"; };
+		AD3514C4247310B000447F6A /* BetterSnappingLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterSnappingLayout.swift; sourceTree = "<group>"; };
+		AD3514C6247311AC00447F6A /* HorizontalSnappingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalSnappingViewController.swift; sourceTree = "<group>"; };
+		AD3514C924731F9E00447F6A /* AppDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailController.swift; sourceTree = "<group>"; };
 		AD5F2DFC246C7D2D00CB026F /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		AD5F2DFE246CD7AC00CB026F /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 		AD5F2DFF246CD7AC00CB026F /* VerticalStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalStackView.swift; sourceTree = "<group>"; };
@@ -127,6 +135,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AD3514C824731F8E00447F6A /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				AD3514C924731F9E00447F6A /* AppDetailController.swift */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
 		AD5F2DFB246C7D0600CB026F /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +170,8 @@
 				AD5F2DFE246CD7AC00CB026F /* UIView+Layout.swift */,
 				AD5F2DFF246CD7AC00CB026F /* VerticalStackView.swift */,
 				AD6C57B424704AAE00CE60E7 /* Extensions.swift */,
+				AD3514C4247310B000447F6A /* BetterSnappingLayout.swift */,
+				AD3514C6247311AC00447F6A /* HorizontalSnappingViewController.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -242,6 +260,7 @@
 				AD911F12246DA67500D9EB35 /* SearchResult.swift */,
 				AD911F15246DA74700D9EB35 /* Networking.swift */,
 				ADDC94082471EC8300402059 /* AppGroup.swift */,
+				AD3514C22472D67800447F6A /* SocialHeader.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -256,6 +275,7 @@
 		AD911F17246EE5FF00D9EB35 /* Apps */ = {
 			isa = PBXGroup;
 			children = (
+				AD3514C824731F8E00447F6A /* Details */,
 				AD911F19246EE65800D9EB35 /* AppsBaseCollectionViewController.swift */,
 				AD911F1B246EE66E00D9EB35 /* AppsHorizontalController.swift */,
 				AD2786DE2471DDE800A35D46 /* AppsHeaderHorizontalController.swift */,
@@ -543,12 +563,16 @@
 				AD911F1A246EE65800D9EB35 /* AppsBaseCollectionViewController.swift in Sources */,
 				AD75AB80246C4D1900407638 /* AppSearchController.swift in Sources */,
 				AD7AAF6C246F25EE00578846 /* AppCellForGroups.swift in Sources */,
+				AD3514C5247310B000447F6A /* BetterSnappingLayout.swift in Sources */,
 				ADDC94092471EC8300402059 /* AppGroup.swift in Sources */,
 				AD2786DF2471DDE800A35D46 /* AppsHeaderHorizontalController.swift in Sources */,
 				AD771EF0246C25ED00AAC41E /* BaseViewController.swift in Sources */,
+				AD3514C32472D67800447F6A /* SocialHeader.swift in Sources */,
 				AD2786E12471E03A00A35D46 /* AppsHeaderCell.swift in Sources */,
 				AD771EEC246C25ED00AAC41E /* AppDelegate.swift in Sources */,
 				AD771EEE246C25ED00AAC41E /* SceneDelegate.swift in Sources */,
+				AD3514CA24731F9E00447F6A /* AppDetailController.swift in Sources */,
+				AD3514C7247311AC00447F6A /* HorizontalSnappingViewController.swift in Sources */,
 				AD911F1E246EE6A100D9EB35 /* BaseCollectionViewController.swift in Sources */,
 				AD6C57B524704AAE00CE60E7 /* Extensions.swift in Sources */,
 				AD724BEF2470E37C00E9E1BB /* AppsPageHeader.swift in Sources */,

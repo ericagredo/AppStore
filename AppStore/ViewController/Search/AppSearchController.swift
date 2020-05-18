@@ -80,7 +80,7 @@ extension AppSearchController: UISearchBarDelegate
         timer?.invalidate()
         timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { (_) in
              Network.shared.fetchItunesApps(searchText: searchText) { (result, err) in
-                       self.appResultArr = result
+                self.appResultArr = result?.results ?? []
                        DispatchQueue.main.async {
                            self.collectionView.reloadData()
                        }

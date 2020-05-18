@@ -15,58 +15,41 @@ struct Network
     {
         
     }
-    func fetchItunesApps(searchText: String, completion: @escaping ([Result], Error?) -> Void)
+    func fetchItunesApps(searchText: String, completion: @escaping (SearchResult?, Error?) -> Void)
     {
-        let searchText = searchText
         let urlString = "https://itunes.apple.com/search?term=\(searchText)&entity=software"
-        guard let url = URL(string: urlString) else { return }
-        
-        URLSession.shared.dataTask(with: url) { (data, response, err) in
-            if let err = err
-            {
-                print("Failed to fecth apps:", err)
-                completion([],err)
-                return
-            }
-            guard let data = data else { return }
-            
-            do
-            {
-                let responses = try JSONDecoder().decode(SearchResult.self, from: data).results
-                completion(responses,nil)
-                
-            }
-            catch let errResponse
-            {
-                completion([],err)
-                print("There was an error decoding", errResponse)
-            }
-            
-        }.resume()
+        print(urlString)
+        fetchGenericJSONData(urlString: urlString, completion: completion)
     }
     
-     func fetchGames(completion: @escaping (AppGroup?, Error?) -> ()) {
-            guard let url = URL(string: "https://rss.itunes.apple.com/api/v1/us/ios-apps/new-games-we-love/all/50/explicit.json") else { return }
-            
-            URLSession.shared.dataTask(with: url) { (data, resp, err) in
-    //            print(String(data: data!, encoding: .utf8))
-                
-                if let err = err {
-                    completion(nil, err)
-                    return
-                }
-                
-                do {
-                    let appGroup = try JSONDecoder().decode(AppGroup.self, from: data!)
-                    // success
-                    appGroup.feed.results.forEach{print($0.name)}
-                    completion(appGroup, nil)
-                } catch {
-                    completion(nil, error)
-    //                print("Failed to decode:", error)
-                }
-                
-                
-            }.resume() // this will fire your request
-        }
+    func fetchGroup(group: String, completion: @escaping (AppGroup?, Error?) -> ())
+    {
+        let urlString = "https://rss.itunes.apple.com/api/v1/us/ios-apps/\(group)/all/50/explicit.json"
+        fetchGenericJSONData(urlString: urlString, completion: completion)
+           
+    }
+    
+    func fetchSocialApps(completion: @escaping ([SocialApp]?, Error?) -> Void) {
+           let urlString = "https://api.letsbuildthatapp.com/appstore/social"
+           fetchGenericJSONData(urlString: urlString, completion: completion)
+       }
+    
+    func fetchGenericJSONData<T: Decodable>(urlString: String, completion: @escaping (T?, Error?)->Void)
+    {
+        
+        guard let url = URL(string: urlString) else { return }
+        URLSession.shared.dataTask(with: url) { (data, resp, err) in
+            if let err = err {
+                completion(nil, err)
+                return
+            }
+            do {
+                let objects = try JSONDecoder().decode(T.self, from: data!)
+                // success
+                completion(objects, nil)
+            } catch {
+                completion(nil, error)
+            }
+            }.resume()
+    }
 }
