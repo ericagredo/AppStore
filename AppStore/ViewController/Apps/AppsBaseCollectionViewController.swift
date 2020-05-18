@@ -12,6 +12,7 @@ class AppsBaseCollectionViewController: BaseCollectionViewController, UICollecti
 {
     let cellId = "cellId"
     let headerId = "headerId"
+    var appGroup: AppGroup?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,10 +21,27 @@ class AppsBaseCollectionViewController: BaseCollectionViewController, UICollecti
         collectionView.register(AppsPageHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerId)
         collectionView.register(AppsGroupCell.self, forCellWithReuseIdentifier: cellId)
         
+        fetchData()
+        
+    }
+    
+    private func fetchData()
+    {
+        Network.shared.fetchGames { (group, err) in
+            self.appGroup = group
+            
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        }
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! AppsGroupCell
+        
+        cell.appSectionLabel.text = self.appGroup?.feed.title
+        cell.horzController.appGroup = self.appGroup
+        cell.horzController.collectionView.reloadData()
        
         return cell
     }

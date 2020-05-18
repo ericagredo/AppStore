@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import SDWebImage
 
 class AppsHorizontalController: BaseCollectionViewController, UICollectionViewDelegateFlowLayout
 {
     let cellId = "horzCell"
     let topBottom : CGFloat = 12
     let lineSpacing: CGFloat = 10
+    var appGroup: AppGroup?
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -26,11 +28,16 @@ class AppsHorizontalController: BaseCollectionViewController, UICollectionViewDe
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        
+        
+        return appGroup?.feed.results.count ?? 0
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! AppCellForGroups
+        cell.appLabel.text = appGroup?.feed.results[indexPath.item].name
+        cell.companyLabel.text = appGroup?.feed.results[indexPath.item].artistName
+        cell.imgView.sd_setImage(with: URL(string: appGroup?.feed.results[indexPath.item].artworkUrl100 ?? ""), completed: nil)
 
         return cell
     }
