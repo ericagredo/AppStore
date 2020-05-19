@@ -95,6 +95,7 @@ class AppsBaseCollectionViewController: BaseCollectionViewController, UICollecti
         cell.appSectionLabel.text = appGroup.feed.title
         cell.horzController.appGroup = appGroup
         cell.horzController.collectionView.reloadData()
+        
         cell.horzController.didSelectHandler = { [weak self] feedResult in
             
             let controller = AppDetailController()
