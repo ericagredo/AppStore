@@ -16,10 +16,20 @@ class AppDetailCell: UICollectionViewCell {
     let whatsNewLabel     = UILabel(text: "What's New", font: .boldSystemFont(ofSize: 20))
     let releaseNotesLabel = UILabel(text: "Release Notes", font: .systemFont(ofSize: 16), numberOfLines: 0)
     
+    var app : Result! {
+        didSet{
+            nameLabel.text = app?.trackName
+            priceButton.setTitle(app?.formattedPrice, for: .normal)
+            appIconImageView.sd_setImage(with: URL(string: app?.artworkUrl100 ?? ""), completed: nil)
+            releaseNotesLabel.text = app?.releaseNotes
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        appIconImageView.backgroundColor = .red
+        self.backgroundColor = .gray
+        
         appIconImageView.constrainWidth(constant: 140)
         appIconImageView.constrainHeight(constant: 140)
         

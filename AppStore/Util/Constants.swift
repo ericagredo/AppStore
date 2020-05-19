@@ -14,4 +14,5 @@ class Constants
     static let search = "search"
     static let today = "today_icon"
     static let apps = "apps"
+    static let star = "star"
 }

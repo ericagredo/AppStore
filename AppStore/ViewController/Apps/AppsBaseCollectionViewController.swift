@@ -10,10 +10,10 @@ import UIKit
 
 class AppsBaseCollectionViewController: BaseCollectionViewController, UICollectionViewDelegateFlowLayout
 {
-    let cellId = "cellId"
-    let headerId = "headerId"
-    var groups = [AppGroup]()
-    var socialApp = [SocialApp]()
+    let cellId            = "cellId"
+    let headerId          = "headerId"
+    var groups            = [AppGroup]()
+    var socialApp         = [SocialApp]()
     let activityIndicator = UIActivityIndicatorView(style: .large)
     
     override func viewDidLoad() {
@@ -99,6 +99,7 @@ class AppsBaseCollectionViewController: BaseCollectionViewController, UICollecti
         cell.horzController.didSelectHandler = { [weak self] feedResult in
             
             let controller = AppDetailController()
+            controller.appId = feedResult.id
             controller.navigationItem.title = feedResult.name
             self?.navigationController?.pushViewController(controller, animated: true)
         }
