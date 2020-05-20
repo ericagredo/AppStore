@@ -14,9 +14,9 @@ class BaseViewController: UITabBarController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.viewControllers = [
+            creatViewController(viewController: TodayViewController(), imgPath: Constants.today, navTitle: "Today"),
             creatViewController(viewController: AppsBaseCollectionViewController(), imgPath: Constants.apps, navTitle: "Apps"),
-            creatViewController(viewController: AppSearchController(), imgPath: Constants.search, navTitle: "Search"),
-            creatViewController(viewController: UIViewController(), imgPath: Constants.today, navTitle: "Today")
+            creatViewController(viewController: AppSearchController(), imgPath: Constants.search, navTitle: "Search")
         ]
         
     }

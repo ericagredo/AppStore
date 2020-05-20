@@ -18,6 +18,8 @@
 		AD5F2DFD246C7D2D00CB026F /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5F2DFC246C7D2D00CB026F /* SearchResultCell.swift */; };
 		AD5F2E00246CD7AC00CB026F /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5F2DFE246CD7AC00CB026F /* UIView+Layout.swift */; };
 		AD5F2E01246CD7AC00CB026F /* VerticalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5F2DFF246CD7AC00CB026F /* VerticalStackView.swift */; };
+		AD6917302475AEE1004B2836 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD69172F2475AEE1004B2836 /* TodayViewController.swift */; };
+		AD6917332475B0CF004B2836 /* TodayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6917322475B0CF004B2836 /* TodayCell.swift */; };
 		AD6C57B524704AAE00CE60E7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6C57B424704AAE00CE60E7 /* Extensions.swift */; };
 		AD724BEF2470E37C00E9E1BB /* AppsPageHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD724BEE2470E37C00E9E1BB /* AppsPageHeader.swift */; };
 		AD75AB7C246C480900407638 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD75AB7B246C480900407638 /* Constants.swift */; };
@@ -84,6 +86,8 @@
 		AD5F2DFC246C7D2D00CB026F /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		AD5F2DFE246CD7AC00CB026F /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 		AD5F2DFF246CD7AC00CB026F /* VerticalStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalStackView.swift; sourceTree = "<group>"; };
+		AD69172F2475AEE1004B2836 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		AD6917322475B0CF004B2836 /* TodayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCell.swift; sourceTree = "<group>"; };
 		AD6C57B424704AAE00CE60E7 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		AD724BEE2470E37C00E9E1BB /* AppsPageHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsPageHeader.swift; sourceTree = "<group>"; };
 		AD75AB7B246C480900407638 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -173,15 +177,33 @@
 		AD5F2DFB246C7D0600CB026F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AD6917312475B0BD004B2836 /* Today */,
 				AD7AAF6A246F25C000578846 /* Apps */,
 				AD7AAF69246F25AB00578846 /* Search */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
+		AD69172E2475AEA4004B2836 /* Today */ = {
+			isa = PBXGroup;
+			children = (
+				AD69172F2475AEE1004B2836 /* TodayViewController.swift */,
+			);
+			path = Today;
+			sourceTree = "<group>";
+		};
+		AD6917312475B0BD004B2836 /* Today */ = {
+			isa = PBXGroup;
+			children = (
+				AD6917322475B0CF004B2836 /* TodayCell.swift */,
+			);
+			path = Today;
+			sourceTree = "<group>";
+		};
 		AD75AB7D246C4CF100407638 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				AD69172E2475AEA4004B2836 /* Today */,
 				AD911F18246EE60A00D9EB35 /* Search */,
 				AD911F17246EE5FF00D9EB35 /* Apps */,
 				AD771EEF246C25ED00AAC41E /* BaseViewController.swift */,
@@ -609,11 +631,13 @@
 				AD771EEE246C25ED00AAC41E /* SceneDelegate.swift in Sources */,
 				AD3514CA24731F9E00447F6A /* AppDetailController.swift in Sources */,
 				AD3514C7247311AC00447F6A /* HorizontalSnappingViewController.swift in Sources */,
+				AD6917332475B0CF004B2836 /* TodayCell.swift in Sources */,
 				AD911F1E246EE6A100D9EB35 /* BaseCollectionViewController.swift in Sources */,
 				AD6C57B524704AAE00CE60E7 /* Extensions.swift in Sources */,
 				AD724BEF2470E37C00E9E1BB /* AppsPageHeader.swift in Sources */,
 				AD911F1C246EE66E00D9EB35 /* AppsHorizontalController.swift in Sources */,
 				AD771EF6246C25ED00AAC41E /* AppStore.xcdatamodeld in Sources */,
+				AD6917302475AEE1004B2836 /* TodayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
