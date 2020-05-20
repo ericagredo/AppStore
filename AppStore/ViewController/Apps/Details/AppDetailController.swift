@@ -21,15 +21,15 @@ class AppDetailController: BaseCollectionViewController, UICollectionViewDelegat
                 }
             }
             let reviewsUrl = "https://itunes.apple.com/rss/customerreviews/page=1/id=\(appId ?? "")/sortby=mostrecent/json?l=en&cc=us"
-                       Network.shared.fetchGenericJSONData(urlString: reviewsUrl) { (reviews: Reviews?, err) in
-                           if let err = err {
-                               print("Failed to decode reviews:", err)
-                               return
-                           }
-                           self.reviews = reviews
-                           DispatchQueue.main.async {
-                               self.collectionView.reloadData()
-                           }
+            Network.shared.fetchGenericJSONData(urlString: reviewsUrl) { (reviews: Reviews?, err) in
+                if let err = err {
+                    print("Failed to decode reviews:", err)
+                    return
+                }
+                self.reviews = reviews
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
             }
         }
     }
@@ -43,7 +43,7 @@ class AppDetailController: BaseCollectionViewController, UICollectionViewDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.backgroundColor = .white
-        
+
         collectionView.register(AppDetailCell.self, forCellWithReuseIdentifier: detailCellId)
         collectionView.register(PreviewScreenshotCell.self, forCellWithReuseIdentifier: previewCellId)
         collectionView.register(ReviewCell.self, forCellWithReuseIdentifier: reviewCellId)
