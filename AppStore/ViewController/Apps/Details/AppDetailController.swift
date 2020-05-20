@@ -10,29 +10,17 @@ import UIKit
 
 
 class AppDetailController: BaseCollectionViewController, UICollectionViewDelegateFlowLayout {
+    let appId: String
     
-    var appId: String! {
-        didSet {
-            let urlString = "https://itunes.apple.com/lookup?id=\(appId ?? "")"
-            Network.shared.fetchGenericJSONData(urlString: urlString) { (result: SearchResult?, err) in
-                self.app = result?.results.first
-                DispatchQueue.main.async {
-                    self.collectionView.reloadData()
-                }
-            }
-            let reviewsUrl = "https://itunes.apple.com/rss/customerreviews/page=1/id=\(appId ?? "")/sortby=mostrecent/json?l=en&cc=us"
-            Network.shared.fetchGenericJSONData(urlString: reviewsUrl) { (reviews: Reviews?, err) in
-                if let err = err {
-                    print("Failed to decode reviews:", err)
-                    return
-                }
-                self.reviews = reviews
-                DispatchQueue.main.async {
-                    self.collectionView.reloadData()
-                }
-            }
-        }
+    init(appId: String) {
+        self.appId = appId
+        super.init()
     }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     var reviews: Reviews?
     var app: Result?
     
@@ -48,6 +36,29 @@ class AppDetailController: BaseCollectionViewController, UICollectionViewDelegat
         collectionView.register(PreviewScreenshotCell.self, forCellWithReuseIdentifier: previewCellId)
         collectionView.register(ReviewCell.self, forCellWithReuseIdentifier: reviewCellId)
         navigationItem.largeTitleDisplayMode = .never
+        loadData()
+    }
+    
+    func loadData()
+    {
+        let urlString = "https://itunes.apple.com/lookup?id=\(appId)"
+        Network.shared.fetchGenericJSONData(urlString: urlString) { (result: SearchResult?, err) in
+            self.app = result?.results.first
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        }
+        let reviewsUrl = "https://itunes.apple.com/rss/customerreviews/page=1/id=\(appId)/sortby=mostrecent/json?l=en&cc=us"
+        Network.shared.fetchGenericJSONData(urlString: reviewsUrl) { (reviews: Reviews?, err) in
+            if let err = err {
+                print("Failed to decode reviews:", err)
+                return
+            }
+            self.reviews = reviews
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        }
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
