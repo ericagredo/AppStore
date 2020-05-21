@@ -49,6 +49,8 @@
 		ADB67999247456BF00263828 /* ReviewHorizontalCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB67998247456BF00263828 /* ReviewHorizontalCells.swift */; };
 		ADB6799B2474829100263828 /* Reviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB6799A2474829100263828 /* Reviews.swift */; };
 		ADDC94092471EC8300402059 /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDC94082471EC8300402059 /* AppGroup.swift */; };
+		ADF130CB2476AD2B00DB4D08 /* AppFullscreenHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF130CA2476AD2B00DB4D08 /* AppFullscreenHeaderCell.swift */; };
+		ADF130CD2476C41000DB4D08 /* TodayItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF130CC2476C41000DB4D08 /* TodayItem.swift */; };
 		C199F3CBEE5AAA2040F40BC4 /* Pods_AppStoreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E1FBDEC362CE096F8398C15 /* Pods_AppStoreTests.framework */; };
 		E6FCF72CC126685D8A810B8A /* Pods_AppStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F5A112B1E1D99F86571D6E8 /* Pods_AppStore.framework */; };
 /* End PBXBuildFile section */
@@ -125,6 +127,8 @@
 		ADB67998247456BF00263828 /* ReviewHorizontalCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewHorizontalCells.swift; sourceTree = "<group>"; };
 		ADB6799A2474829100263828 /* Reviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reviews.swift; sourceTree = "<group>"; };
 		ADDC94082471EC8300402059 /* AppGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroup.swift; sourceTree = "<group>"; };
+		ADF130CA2476AD2B00DB4D08 /* AppFullscreenHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFullscreenHeaderCell.swift; sourceTree = "<group>"; };
+		ADF130CC2476C41000DB4D08 /* TodayItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayItem.swift; sourceTree = "<group>"; };
 		BD3CE835CF0A59318A78BFDF /* Pods-AppStoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStoreTests.debug.xcconfig"; path = "Target Support Files/Pods-AppStoreTests/Pods-AppStoreTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FA1E99A1A2FBB3634358AF03 /* Pods_AppStore_AppStoreUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppStore_AppStoreUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -202,6 +206,7 @@
 			children = (
 				AD6917322475B0CF004B2836 /* TodayCell.swift */,
 				AD69173624761614004B2836 /* AppFullscreenDescriptionCell.swift */,
+				ADF130CA2476AD2B00DB4D08 /* AppFullscreenHeaderCell.swift */,
 			);
 			path = Today;
 			sourceTree = "<group>";
@@ -318,6 +323,7 @@
 				ADDC94082471EC8300402059 /* AppGroup.swift */,
 				AD3514C22472D67800447F6A /* SocialHeader.swift */,
 				ADB6799A2474829100263828 /* Reviews.swift */,
+				ADF130CC2476C41000DB4D08 /* TodayItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -610,6 +616,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADF130CD2476C41000DB4D08 /* TodayItem.swift in Sources */,
 				AD5F2E00246CD7AC00CB026F /* UIView+Layout.swift in Sources */,
 				AD911F16246DA74700D9EB35 /* Networking.swift in Sources */,
 				ADB67993247434F000263828 /* PreviewScreenshotCell.swift in Sources */,
@@ -640,6 +647,7 @@
 				AD3514C7247311AC00447F6A /* HorizontalSnappingViewController.swift in Sources */,
 				AD6917332475B0CF004B2836 /* TodayCell.swift in Sources */,
 				AD69173724761614004B2836 /* AppFullscreenDescriptionCell.swift in Sources */,
+				ADF130CB2476AD2B00DB4D08 /* AppFullscreenHeaderCell.swift in Sources */,
 				AD911F1E246EE6A100D9EB35 /* BaseCollectionViewController.swift in Sources */,
 				AD6C57B524704AAE00CE60E7 /* Extensions.swift in Sources */,
 				AD724BEF2470E37C00E9E1BB /* AppsPageHeader.swift in Sources */,
