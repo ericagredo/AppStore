@@ -20,6 +20,8 @@
 		AD5F2E01246CD7AC00CB026F /* VerticalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5F2DFF246CD7AC00CB026F /* VerticalStackView.swift */; };
 		AD6917302475AEE1004B2836 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD69172F2475AEE1004B2836 /* TodayViewController.swift */; };
 		AD6917332475B0CF004B2836 /* TodayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6917322475B0CF004B2836 /* TodayCell.swift */; };
+		AD691735247615D7004B2836 /* AppFullscreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD691734247615D7004B2836 /* AppFullscreenController.swift */; };
+		AD69173724761614004B2836 /* AppFullscreenDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD69173624761614004B2836 /* AppFullscreenDescriptionCell.swift */; };
 		AD6C57B524704AAE00CE60E7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6C57B424704AAE00CE60E7 /* Extensions.swift */; };
 		AD724BEF2470E37C00E9E1BB /* AppsPageHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD724BEE2470E37C00E9E1BB /* AppsPageHeader.swift */; };
 		AD75AB7C246C480900407638 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD75AB7B246C480900407638 /* Constants.swift */; };
@@ -88,6 +90,8 @@
 		AD5F2DFF246CD7AC00CB026F /* VerticalStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalStackView.swift; sourceTree = "<group>"; };
 		AD69172F2475AEE1004B2836 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		AD6917322475B0CF004B2836 /* TodayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCell.swift; sourceTree = "<group>"; };
+		AD691734247615D7004B2836 /* AppFullscreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFullscreenController.swift; sourceTree = "<group>"; };
+		AD69173624761614004B2836 /* AppFullscreenDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFullscreenDescriptionCell.swift; sourceTree = "<group>"; };
 		AD6C57B424704AAE00CE60E7 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		AD724BEE2470E37C00E9E1BB /* AppsPageHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsPageHeader.swift; sourceTree = "<group>"; };
 		AD75AB7B246C480900407638 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -188,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				AD69172F2475AEE1004B2836 /* TodayViewController.swift */,
+				AD691734247615D7004B2836 /* AppFullscreenController.swift */,
 			);
 			path = Today;
 			sourceTree = "<group>";
@@ -196,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				AD6917322475B0CF004B2836 /* TodayCell.swift */,
+				AD69173624761614004B2836 /* AppFullscreenDescriptionCell.swift */,
 			);
 			path = Today;
 			sourceTree = "<group>";
@@ -619,6 +625,7 @@
 				AD75AB80246C4D1900407638 /* AppSearchController.swift in Sources */,
 				ADB6799B2474829100263828 /* Reviews.swift in Sources */,
 				AD7AAF6C246F25EE00578846 /* AppCellForGroups.swift in Sources */,
+				AD691735247615D7004B2836 /* AppFullscreenController.swift in Sources */,
 				AD3514CD24735D5500447F6A /* AppDetailCell.swift in Sources */,
 				AD3514C5247310B000447F6A /* BetterSnappingLayout.swift in Sources */,
 				ADDC94092471EC8300402059 /* AppGroup.swift in Sources */,
@@ -632,6 +639,7 @@
 				AD3514CA24731F9E00447F6A /* AppDetailController.swift in Sources */,
 				AD3514C7247311AC00447F6A /* HorizontalSnappingViewController.swift in Sources */,
 				AD6917332475B0CF004B2836 /* TodayCell.swift in Sources */,
+				AD69173724761614004B2836 /* AppFullscreenDescriptionCell.swift in Sources */,
 				AD911F1E246EE6A100D9EB35 /* BaseCollectionViewController.swift in Sources */,
 				AD6C57B524704AAE00CE60E7 /* Extensions.swift in Sources */,
 				AD724BEF2470E37C00E9E1BB /* AppsPageHeader.swift in Sources */,

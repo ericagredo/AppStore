@@ -11,7 +11,8 @@ import UIKit
 class TodayViewController: BaseCollectionViewController, UICollectionViewDelegateFlowLayout
 {
     let cellId = "cellId"
-    var staringFrame : CGRect?
+    var startingFrame : CGRect?
+    var appFullscreenController: UIViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,28 +29,45 @@ class TodayViewController: BaseCollectionViewController, UICollectionViewDelegat
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let redView = UIView()
-        redView.backgroundColor = .red
+        let appFullscreenController = AppFullscreenController()
+        let redView = appFullscreenController.view!
         redView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleRemoveRedView)))
         view.addSubview(redView)
-      
+
+        addChild(appFullscreenController)
+        
+        self.appFullscreenController = appFullscreenController
+        
         guard let cell = collectionView.cellForItem(at: indexPath) else { return }
         
+        // absolute coordindates of cell
         guard let startingFrame = cell.superview?.convert(cell.frame, to: nil) else { return }
-        self.staringFrame = startingFrame
+        
+        self.startingFrame = startingFrame
         redView.frame = startingFrame
         redView.layer.cornerRadius = 16
         
+        // why i don't use a transition delegate?
+        
+        // we're using frames for animation
+        // frames aren't reliable enough for animations
+        
         UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .curveEaseOut, animations: {
+            
             redView.frame = self.view.frame
+            
+            self.tabBarController?.tabBar.frame.origin.y = self.view.frame.height + (self.tabBarController?.tabBar.frame.height ?? 0)
+            
         }, completion: nil)
     }
     
     @objc func handleRemoveRedView(gesture: UITapGestureRecognizer)
     {
         UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .curveEaseOut, animations: {
-            guard let backToFrame = self.staringFrame else { return }
+            guard let backToFrame = self.startingFrame else { return }
             gesture.view?.frame = backToFrame
+            self.tabBarController?.tabBar.frame.origin.y = self.view.frame.height-(self.tabBarController?.tabBar.frame.height ?? 0)
+            self.appFullscreenController.removeFromParent()
         }) { (_) in
             gesture.view?.removeFromSuperview()
         }
@@ -58,6 +76,8 @@ class TodayViewController: BaseCollectionViewController, UICollectionViewDelegat
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 4
     }
+    
+    
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return .init(width: view.frame.width - 64, height: 450)
