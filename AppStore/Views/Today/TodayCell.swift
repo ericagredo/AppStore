@@ -18,8 +18,11 @@ class TodayCell: UICollectionViewCell
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.addSubview(imgView)
-        imgView.centerInSuperview(size: .init(width: 250, height: 250))
+        self.backgroundColor = .white
+        layer.cornerRadius = 16
         imgView.contentMode = .scaleAspectFill
+        imgView.centerInSuperview(size: .init(width: 250, height: 250))
+        
     }
     
     required init?(coder: NSCoder) {
