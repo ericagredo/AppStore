@@ -20,9 +20,13 @@ class AppFullscreenController: UITableViewController
            tableView.separatorStyle = .none
            tableView.allowsSelection = false
         tableView.contentInsetAdjustmentBehavior = .never
+        
+       }
+    
+    override func viewDidAppear(_ animated: Bool) {
         let frame = view.window?.windowScene?.statusBarManager?.statusBarFrame ?? CGRect.zero
         tableView.contentInset = .init(top: 0, left: 0, bottom: frame.height, right: 0)
-       }
+    }
        
        override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
            return 2
@@ -34,6 +38,7 @@ class AppFullscreenController: UITableViewController
                let headerCell = AppFullscreenHeaderCell()
                headerCell.closeButton.addTarget(self, action: #selector(handleDismiss), for: .touchUpInside)
                headerCell.todayCell.todayItem = todayItem
+            headerCell.todayCell.layer.cornerRadius = 0
                return headerCell
            }
            
@@ -48,7 +53,7 @@ class AppFullscreenController: UITableViewController
        
        override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
            if indexPath.row == 0 {
-               return 494
+               return 450
            }
            return super.tableView(tableView, heightForRowAt: indexPath)
        }
