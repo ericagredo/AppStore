@@ -19,6 +19,9 @@ class AppFullscreenController: UITableViewController
            tableView.tableFooterView = UIView()
            tableView.separatorStyle = .none
            tableView.allowsSelection = false
+        tableView.contentInsetAdjustmentBehavior = .never
+        let frame = view.window?.windowScene?.statusBarManager?.statusBarFrame ?? CGRect.zero
+        tableView.contentInset = .init(top: 0, left: 0, bottom: frame.height, right: 0)
        }
        
        override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

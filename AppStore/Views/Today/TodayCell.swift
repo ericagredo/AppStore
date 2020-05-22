@@ -17,6 +17,8 @@ class TodayCell: UICollectionViewCell
             titleLabel.text = todayItem.title
             imageView.image = todayItem.image
             descriptionLabel.text = todayItem.description
+            backgroundColor = todayItem.backgroundColor
+          
         }
     }
     
@@ -28,6 +30,7 @@ class TodayCell: UICollectionViewCell
     let descriptionLabel = UILabel(text: "All the tools and apps you need to intelligently organize your life the right way.", font: .systemFont(ofSize: 16), numberOfLines: 3)
     
     var topConstraint: NSLayoutConstraint!
+  
 
     
     lazy var imgView : UIImageView = {
@@ -43,7 +46,7 @@ class TodayCell: UICollectionViewCell
      override init(frame: CGRect) {
         super.init(frame: frame)
                 
-                backgroundColor = .white
+        
                 clipsToBounds = true
                 layer.cornerRadius = 16
                 
